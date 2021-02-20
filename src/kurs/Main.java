@@ -12,7 +12,8 @@ public class Main {
 
     //поменять местами два элемента в массиве любого типа
     private static <T> void swap(T[] array, int index1, int index2) {
-        if (index1 < 0 || index1 >= array.length || index2 < 0 || index2 >= array.length) {
+        if (array == null || index1 < 0 || index1 >= array.length || index2 < 0 ||
+                index2 >= array.length || index1 == index2) {
             return;
         }
         T temp = array[index1];
@@ -22,6 +23,7 @@ public class Main {
 
     //преобразовать массив в ArrayList
     private static <T> ArrayList<T> toArrayList(T[] array) {
+        if (array == null) return null;
         return new ArrayList<>(Arrays.asList(array));
     }
 
