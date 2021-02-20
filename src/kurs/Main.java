@@ -39,7 +39,8 @@ public class Main {
         swap(array, index1, index2);
         System.out.println("  " + Arrays.toString(array));
         System.out.println("создаем ArrayList:");
-        System.out.println("  ArrayList" + toArrayList(array));
+        ArrayList<T> arrayList = toArrayList(array);
+        System.out.println("  " + arrayList.getClass().getSimpleName() + arrayList);
     }
 
     private static void testBoxes() {
