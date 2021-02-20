@@ -28,7 +28,7 @@ public class Box<T extends Fruit> {
 
     //посчитать вес коробки, вес одного фрукта берем из первого элемента
     public float getWeight() {
-        return (list.size() == 0) ? 0f : list.size() * list.get(0).getWeight();
+        return (list.isEmpty()) ? 0f : list.size() * list.get(0).getWeight();
     }
 
     //сравнить вес с весом коробки любого типа
@@ -38,7 +38,7 @@ public class Box<T extends Fruit> {
 
     //пересыпать в другую коробку такого же типа
     public void overload(Box<T> box) {
-        if (list.size() == 0) return;
+        if (list.isEmpty()) return;
         for (T fruit: list) box.add(fruit);
         list.clear();
     }
@@ -46,7 +46,7 @@ public class Box<T extends Fruit> {
     //переопределим отображение, что именно - берем из первого элемента
     @Override
     public String toString() {
-        return String.format("{Коробка %s: %s}", name, (list.size() == 0) ?
+        return String.format("{Коробка %s: %s}", name, (list.isEmpty()) ?
                 "пустая" : list.get(0).getPluralName() + String.format(" %.1f кг", getWeight()));
     }
 }

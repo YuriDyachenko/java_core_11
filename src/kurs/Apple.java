@@ -13,4 +13,5 @@ public class Apple extends Fruit{
     public String getPluralName() {
         return "яблоки";
     }
+
 }
