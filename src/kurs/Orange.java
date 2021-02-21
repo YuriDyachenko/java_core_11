@@ -13,4 +13,9 @@ public class Orange extends Fruit{
     public String getPluralName() {
         return "апельсины";
     }
+
+    @Override
+    public Fruit myClone(Fruit fruit) {
+        return new Orange();
+    }
 }

@@ -14,4 +14,8 @@ public class Apple extends Fruit{
         return "яблоки";
     }
 
+    @Override
+    public Fruit myClone(Fruit fruit) {
+        return new Apple();
+    }
 }

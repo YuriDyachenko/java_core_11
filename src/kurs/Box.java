@@ -19,10 +19,11 @@ public class Box<T extends Fruit> {
         list.add(fruit);
     }
 
-    //хитрость, чтобы быстро добавлять несколько, но ссылка-то будет оставаться одна и та же
+    //хитрость, чтобы быстро добавлять несколько
+    //первая ссылка добавляется переданная, а потом мы клонируем, чтобы были новые объекты
     public void add(T fruit, int how) {
         for (int i = 0; i < how; i++) {
-            add(fruit);
+            add(i == 0 ? fruit : (T) fruit.myClone(fruit));
         }
     }
 
