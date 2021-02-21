@@ -23,7 +23,11 @@ public class Box<T extends Fruit> {
     //первая ссылка добавляется переданная, а потом мы клонируем, чтобы были новые объекты
     public void add(T fruit, int how) {
         for (int i = 0; i < how; i++) {
-            add(i == 0 ? fruit : (T) fruit.myClone(fruit));
+            try {
+                add(i == 0 ? fruit : (T) fruit.clone());
+            } catch (CloneNotSupportedException e) {
+                e.printStackTrace();
+            }
         }
     }
 

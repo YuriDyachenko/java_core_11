@@ -7,6 +7,9 @@ public abstract class Fruit {
     public abstract float getWeight();
     //абстрактный метод "название во множественном числе"
     public abstract String getPluralName();
-    //
-    public abstract Fruit myClone(Fruit fruit);
+    //переопределяем клонирование, абстрактный мы не создаем новый
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return null;
+    }
 }
